@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "Node16",
+		"moduleResolution": "Node16",
+		"target": "ES2022",
+		"lib": [
+			"ES2022"
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true,
+		// Incluir tipos de mocha para que las pruebas compilen durante check-types
+		"types": ["node", "vscode", "mocha"],
+		"skipLibCheck": true
+	}
+}

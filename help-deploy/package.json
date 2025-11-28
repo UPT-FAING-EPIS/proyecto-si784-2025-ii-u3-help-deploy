@@ -1,0 +1,147 @@
+{
+  "name": "help-deploy",
+  "displayName": "Help Deploy",
+  "description": "Asistente para Terraform y Git: clonar repos, crear ramas, plantilla README, commits guiados y stash.",
+  "version": "1.0.9",
+  "publisher": "AugustoJoaquinRiveraMuoz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/help-deploy/help-deploy"
+  },
+  "bugs": {
+    "url": "https://github.com/help-deploy/help-deploy/issues"
+  },
+  "homepage": "https://marketplace.visualstudio.com/publishers/AugustoJoaquinRiveraMuoz",
+  "icon": "images/Help-Deploy.png",
+  "keywords": [
+    "terraform",
+    "deploy",
+    "infrastructure",
+    "cloud",
+    "automation",
+    "git",
+    "branch",
+    "stash",
+    "readme",
+    "commit"
+  ],
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "help-deploy-history",
+          "title": "Help Deploy",
+          "icon": "images/btnHistorial(2).png"
+        }
+      ]
+    },
+    "views": {
+      "help-deploy-history": [
+        {
+          "id": "helpDeployHistoryView",
+          "name": "Historial"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "help-deploy.history.clear",
+          "when": "view == helpDeployHistoryView",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "help-deploy.history.copyEntry",
+          "when": "view == helpDeployHistoryView",
+          "group": "inline"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "help-deploy.history.clear",
+        "title": "Limpiar historial"
+      },
+      {
+        "command": "help-deploy.history.copyEntry",
+        "title": "Copiar detalles"
+      },
+      {
+        "command": "help-deploy.gitClone",
+        "title": "Clonar repositorio (Git)",
+        "category": "Asistente"
+      },
+      {
+        "command": "help-deploy.gitCreateBranch",
+        "title": "Crear rama (Git)",
+        "category": "Asistente"
+      },
+      {
+        "command": "help-deploy.createReadme",
+        "title": "Crear README.md (Plantilla)",
+        "category": "Asistente"
+      },
+      {
+        "command": "help-deploy.crearMainTf",
+        "title": "Crear main.tf",
+        "category": "Asistente"
+      },
+      {
+        "command": "help-deploy.desplegarTerraform",
+        "title": "Desplegar proyecto con Terraform",
+        "category": "Asistente"
+      },
+      {
+        "command": "help-deploy.gitPush",
+        "title": "Pushear cambios (Git)",
+        "category": "Asistente"
+      },
+      {
+        "command": "help-deploy.gitStashAssistant",
+        "title": "Guardado temporal (stash) (Git)",
+        "category": "Asistente"
+      },
+      {
+        "command": "help-deploy.gitStashRecover",
+        "title": "Recuperar stash (Git)",
+        "category": "Asistente"
+      }
+    ]
+  },
+    "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.46.3",
+    "eslint": "^9.39.1",
+    "esbuild": "^0.27.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  },
+  "license": "LICENSE.txt"
+}
