@@ -12,6 +12,9 @@ Asistente para Terraform y Git desde Visual Studio Code: clonar repos, crear ram
 - Augusto Joaquín Rivera Muñoz (`2022073505`)
 - Jefferson Rosas Chambilla (`2021072618`)
 
+## Repositorio del proyeto completo (Drive)
+
+https://drive.google.com/drive/folders/1yfMhP0oLkHyY8XGA6vY_prPZc8mB2aFJ?usp=sharing
 
 ## Instalación y ejecución
 
