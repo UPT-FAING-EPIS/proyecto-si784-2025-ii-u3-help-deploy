@@ -3,3 +3,8 @@ dist
 node_modules
 .vscode-test/
 *.vsix
+
+.terraform/
+terraform.tfstate*
+
+.vscode-test/
